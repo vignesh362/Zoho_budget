@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hey There!!!</title>
+<link rel="stylesheet" href="signin.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel = "icon" href = 
+"https://upload.wikimedia.org/wikipedia/commons/f/f2/ZOHO.svg" 
+        type = "image/x-icon">
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/ZOHO.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    
+Cart
+  </a>
+    <form class="form-inline my-2 my-lg-0" action="Aboutus.jsp" method="post">
+        <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">About Us</button>
+    </form>
+</nav>
+<div class="user" >
+    <header class="user__header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/ZOHO.svg" alt="" style="width:200px;height:100px;"/>
+        <h1 class="user__title">Welcome To Zoho Cart</h1>
+    </header>
+    
+    <form class="form" action="sign" method="post" >
+    	<div class="form__group">
+            <input type="text" placeholder="Name" class="form__input" name="Uname" />
+        </div>
+        <div class="form__group">
+            <input type="email" placeholder="Email" class="form__input" name="Uemail" />
+        </div>
+        
+        <div class="form__group">
+            <input type="password" placeholder="Password" class="form__input" name="Upass"/>
+        </div>
+        <div class="form__group">
+            <input type="password" placeholder="Retype Password" class="form__input" name="Upass1"/>
+        </div>
+        <button class="btn" type="submit">Sign Up</button>
+    </form>
+    
+    <br>
+
+	  
+ 
+</div>
+</body>
+</html>

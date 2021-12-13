@@ -1,0 +1,407 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="Budget">
+         <table name="User">
+                  <columns>
+                           <column name="User_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>User.User_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="Name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="Email">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>30</max-size>
+                                    <!--Default Value-->
+                                    <default-value>abc@gmail.com</default-value>
+                                    <nullable>false</nullable>
+                                    <!--Allowed Pattern-->
+                                    <allowed-values>
+                                             <pattern>^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$</pattern>
+                                    </allowed-values>
+                          </column> 
+  			                  <column name="Pass">
+                                  <data-type>CHAR</data-type>
+                                   <max-size>30</max-size>
+                                   <nullable>false</nullable>
+                          </column> 
+				
+		</columns>
+                  <primary-key name="U_PK1">
+                           <primary-key-column>User_id</primary-key-column>
+                  </primary-key>
+                  <!--Unique Key-->
+                  <unique-keys>
+                           <unique-key name="U_UK">
+                                    <unique-key-column>Email</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+         </table>
+ <table name="Bcategory">
+                  <columns>
+                           <column name="Category_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Bcategory.Category_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                            <column name="Name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>40</max-size>
+                           </column>
+		          <column name="Comments">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                           </column>
+			<column name="User_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+			</columns>
+                  <primary-key name="U_PK2">
+                           <primary-key-column>Category_id</primary-key-column>
+                  </primary-key>
+		<foreign-keys>
+                <foreign-key name="user2" reference-table-name="User">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>User_id</fk-local-column>
+                          <fk-reference-column>User_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                  </foreign-keys>
+                  
+      </table>     
+ <table name="Payment_method">
+                  <columns>
+                           <column name="Paymentmethod_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Payment_method.Method_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                            <column name="Name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>40</max-size>
+                           </column>
+		           <column name="Comments">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                           </column>
+	
+			</columns>
+                  <primary-key name="U_PK3">
+                           <primary-key-column>Paymentmethod_id</primary-key-column>
+                  </primary-key>
+                  
+      </table> 
+   <table name="Income_type">
+                  <columns>
+                           <column name="Incometype_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Income_type.Incometype_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                            <column name="Source">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>40</max-size>
+                           </column>
+                           <column name="Comments">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                           </column>
+ 			   <column name="User_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+	
+			</columns>
+                  <primary-key name="U_PK4">
+                           <primary-key-column>Incometype_id</primary-key-column>
+                  </primary-key>
+ 		 <foreign-keys>
+                  
+
+                 <foreign-key name="user4" reference-table-name="User">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>User_id</fk-local-column>
+                          <fk-reference-column>User_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                  </foreign-keys>
+                  
+      </table>   
+         
+       <table name="Income">
+                  <columns>
+                           <column name="Income_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Income.Income_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="Amount">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                                </column> 
+                            <column name="Date">
+                                    <data-type>DATE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="Comments">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                           </column>
+				                    <column name="User_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                            <column name="Incometype_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+	
+			</columns>
+                  <primary-key name="U_PK5">
+                           <primary-key-column>Income_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                  <foreign-key name="type5" reference-table-name="Income_type">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>Incometype_id</fk-local-column>
+                          <fk-reference-column>Incometype_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+
+                 <foreign-key name="user5" reference-table-name="User">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>User_id</fk-local-column>
+                          <fk-reference-column>User_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                  </foreign-keys>
+                  
+      </table>
+       
+
+
+  <table name="Expense">
+                  <columns>
+                           <column name="Expense_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                            <generator-name>Expence.Expence_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="Amount">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                            </column> 
+                            <column name="Paymentmethod_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                            </column> 
+                            
+                           <column name="Comments">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                           </column>
+                           <column name="Date">
+                                    <data-type>DATE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                          <column name="Category_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                            <column name="User_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+	
+			</columns>
+                  <primary-key name="U_PK6">
+                           <primary-key-column>Expense_id</primary-key-column>
+                  </primary-key>
+                    <foreign-keys>
+                  <foreign-key name="payment6" reference-table-name="Payment_method">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>Paymentmethod_id</fk-local-column>
+                          <fk-reference-column>Paymentmethod_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+
+                 <foreign-key name="user6" reference-table-name="User">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>User_id</fk-local-column>
+                          <fk-reference-column>User_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                <foreign-key name="category6_FK" reference-table-name="Bcategory">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>Category_id</fk-local-column>
+                          <fk-reference-column>Category_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                  </foreign-keys>
+                  
+      </table>     
+
+  <table name="Recurr_exp">
+                  <columns>
+                           <column name="Rexp_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                            <generator-name>Recurr_exp.Rexp_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="Amount">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                            </column> 
+                            <column name="Comments">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                           </column>
+                           <column name="Date">
+                                    <data-type>DATE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+				                    <column name="Category_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                            <column name="User_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="Created_on">
+                                    <data-type>DATE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+	
+			</columns>
+                  <primary-key name="U_PK7">
+                           <primary-key-column>Rexp_id</primary-key-column>
+                  </primary-key>
+                      <foreign-keys>
+                   <foreign-key name="user7" reference-table-name="User">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>User_id</fk-local-column>
+                          <fk-reference-column>User_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                <foreign-key name="category7" reference-table-name="Bcategory">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>Category_id</fk-local-column>
+                          <fk-reference-column>Category_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                  </foreign-keys>
+                  
+      </table>  
+  
+  <table name="Budget">
+                  <columns>
+                           <column name="Budget_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Budget.Budget_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                            <column name="Created_on">
+                                    <data-type>DATE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+				             <column name="User_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+	
+			</columns>
+                  <primary-key name="U_PK8">
+                           <primary-key-column>Budget_id</primary-key-column>
+                  </primary-key>
+                     <foreign-keys>
+                   <foreign-key name="user8" reference-table-name="User">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>User_id</fk-local-column>
+                          <fk-reference-column>User_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+             </foreign-keys>
+                  
+      </table>         
+ <table name="Category_budget">
+                  <columns>
+                           <column name="Categorybudget_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Category_budget.Categorybudget_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                            
+                            <column name="Category_id">
+                                    <data-type>BIGINT</data-type>
+                                    <nullable>false</nullable>
+                              </column>
+                              <column name="Amount">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                              </column> 
+                            <column name="Budget_id">
+                                  <data-type>BIGINT</data-type>
+                                  <nullable>false</nullable>
+                            </column>
+	
+			</columns>
+                  <primary-key name="U_PK9">
+                           <primary-key-column>Categorybudget_id</primary-key-column>
+                  </primary-key>
+                     <foreign-keys>
+                   <foreign-key name="budgetcate9" reference-table-name="Budget">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>Budget_id</fk-local-column>
+                          <fk-reference-column>Budget_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                <foreign-key name="category9" reference-table-name="Bcategory">
+                    <fk-columns>
+                      <fk-column>
+                          <fk-local-column>Category_id</fk-local-column>
+                          <fk-reference-column>Category_id</fk-reference-column>
+                      </fk-column>
+                    </fk-columns>
+                </foreign-key>
+                  </foreign-keys>
+                  
+      </table>       
+
+       
+</data-dictionary>

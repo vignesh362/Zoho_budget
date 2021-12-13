@@ -1,0 +1,127 @@
+<web-app>
+
+<servlet>
+  <servlet-name>a</servlet-name>
+  <servlet-class>signServlet</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>a</servlet-name>
+  <url-pattern>/sign</url-pattern>
+  
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>b</servlet-name>
+  <servlet-class>logincheck</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>b</servlet-name>
+  <url-pattern>/logincheck</url-pattern>
+  
+  </servlet-mapping>
+
+
+  <servlet>
+  <servlet-name>c</servlet-name>
+  <servlet-class>AddIncome</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>c</servlet-name>
+  <url-pattern>/AddIncome</url-pattern>
+  
+  </servlet-mapping>
+
+   <servlet>
+  <servlet-name>d</servlet-name>
+  <servlet-class>AddExpense</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>d</servlet-name>
+  <url-pattern>/AddExpense</url-pattern>
+  
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>e</servlet-name>
+  <servlet-class>AddBudget</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>e</servlet-name>
+  <url-pattern>/AddBudget</url-pattern>
+  
+  </servlet-mapping>
+
+    <servlet>
+  <servlet-name>f</servlet-name>
+  <servlet-class>Addcat</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>f</servlet-name>
+  <url-pattern>/Addcat</url-pattern>
+  
+  </servlet-mapping>
+
+    
+
+    <servlet>
+  <servlet-name>g</servlet-name>
+  <servlet-class>graph</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>g</servlet-name>
+  <url-pattern>/graph</url-pattern>
+  
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>h</servlet-name>
+  <servlet-class>graph2</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>h</servlet-name>
+  <url-pattern>/graph2</url-pattern>
+  
+  </servlet-mapping>
+
+
+  <servlet>
+  <servlet-name>i</servlet-name>
+  <servlet-class>Report</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>i</servlet-name>
+  <url-pattern>/report</url-pattern>
+  
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>j</servlet-name>
+  <servlet-class>logout</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  
+  <servlet-name>j</servlet-name>
+  <url-pattern>/logout</url-pattern>
+  
+  </servlet-mapping>
+
+</web-app>
